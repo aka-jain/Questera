@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questionaire</title>
+
+<!-- bootstrap init -->
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+<!-- main css -->
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<!-- defining questionaire app here -->
+<body ng-app="questionaire" ng-controller="mainController" class="wow fadeInUp">
+
+<!-- message intro container path: partials/introMessage.html-->
+<!-- <intro-message></intro-message> -->
+
+
+
+<ng-view></ng-view>
+
+
+
+</body>
+
+
+
+
+<!-- angular lib -->
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+
+<!-- third party plugins -->
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/jqlite/jqlite.min.js"></script>
+
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="node_modules/wowjs/dist/wow.min.js"></script>
+
+<!-- angular app -->
+<script type="text/javascript" src="app.js"></script>
+
+<!-- controllers -->
+<script type="text/javascript" src="controllers/controllers.js"></script>
+
+<!-- directives -->
+<script type="text/javascript" src="directives/directives.js"></script>
+
+<!-- services -->
+<script type="text/javascript" src="services/services.js"></script>
+<script type="text/javascript">
+
+           
+</script>
+
+<!-- script for intro messages and loader rendering -->
+
+
+<script type="text/javascript">
+
+              new WOW().init();
+         
+</script>
+
+
+</html>

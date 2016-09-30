@@ -1,0 +1,47 @@
+[
+	{
+		"quest":"What's your name?",
+		"options":[
+			{
+				"a": "Name",
+				"b": "Raun"
+			}],
+		"ans":"a"
+	},
+	{
+		"quest":"Can you lift an elephant with one hand?",
+		"options":[
+			{
+				"a": "No, not at all",
+				"b": "Yes, too much easy"
+			}],
+		"ans":"c"
+	},
+	{
+		"quest":"What's your name?",
+		"options":[
+			{
+				"a": "Name",
+				"b": "Raun"
+			}],
+		"ans":"a"
+	},
+	{
+		"quest":"What's your name?",
+		"options":[
+			{
+				"a": "Name",
+				"b": "Raun"
+			}],
+		"ans":"a"
+	},
+	{
+		"quest":"What's your name?",
+		"options":[
+			{
+				"a": "Name",
+				"b": "Raun"
+			}],
+		"ans":"a"
+	}
+]

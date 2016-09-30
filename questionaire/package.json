@@ -1,0 +1,17 @@
+{
+  "name": "questionaire",
+  "version": "1.0.0",
+  "description": "a beautiful designed questionaire",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akash <akashjain993@gmail.com> (http://www.jainakash.in/)",
+  "license": "ISC",
+  "dependencies": {
+    "angular-apimock": "^0.3.3",
+    "animate.css": "^3.5.2",
+    "jqlite": "^0.2.39",
+    "simple-server": "^1.0.1"
+  }
+}

@@ -1,0 +1,59 @@
+
+
+
+<!-- taking qa as prefix for questionaire -->
+<div class="qa-container wow fadeInUp" data-wow-delay="0.4s" >
+
+
+
+
+<!-- defining into directive -->
+	<!-- <intro-message></intro-message> -->
+	<div class="user-intro-container wow fadeInUp" data-wow-delay="0.7s">
+
+
+		<h1 class="hey">Hey<span class="name-val">!</span></h1>
+		<div class="move-down">
+			<h3 class="may">May I know your good name please &#x1F607;</h3><br>
+			<form>
+
+				<label for="input1"><h3>Enter here:</h3></label>
+				<input type="text" id="input1" onblur="this.focus()"  name="name" class="search-input" ng-autofocus  onkeypress="this.style.width = ((this.value.length + 10) * 8) + 'px';" autocomplete="off" ng-model="name">
+				
+				<br>
+				<div class="btn btn-white btn-skip" ng-click="setAnonymous()">Skip &nbsp;<i class="fa fa-user-secret"></i></div>
+				<div class="btn btn-green btn-done" ng-click="getNameVal()">Done &nbsp;<i class="fa fa-send"></i></div>
+				
+			</form>
+
+			<div class="error-intro">Oops! I think you forgot to enter your name.</div>
+		</div>
+		<h3 class="intro-welcome">Happy to see you here &#9786;</h3><h3 class="intro-load">Just a moment, loading our Journey &#x1F60E;
+		<span class="load-dots load-dots-0">.</span>
+		<span class="load-dots load-dots-1">.</span>
+		<span class="load-dots load-dots-2">.</span>
+		</h3>
+	</div>
+
+
+<div id="welcome-intro">
+	<h3 class="may">Welcome to <strong>Questera,</strong> {{ firstName }}!</h3>
+	<h4> 5 questions, 1 mind. Are you ready &#x1F60E;</h4>
+	<a href="#/questions/1">
+	<div class="btn btn-green btn-done" >Let's Go &nbsp;<i class="fa fa-send"></i></div></a>
+	<br>
+
+
+	
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+

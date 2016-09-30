@@ -1,0 +1,27 @@
+<div class="qa-container wow fadeInUp" ng-controller="questionsAnswers">
+
+	<div class="questionaire-container">
+		<h3>{{question}}</h3>
+		<div class="answer">
+		<form>
+			<ul  >
+			
+				<h3 class="options" ng-repeat="(option_num, option) in questList.options[0]">
+					<input class="get-option" type="radio" name="{{quest_num}}" id="{{option_num}}-{{quest_num}}" value="{{option_num}}" >
+       				<label for="{{option_num}}-{{quest_num}}"><strong>{{option}}</strong> </label>
+       				<div class="check"></div>
+					
+				</h3>
+			
+			</ul>
+			</form>
+		</div>
+		<div class="row">
+
+		<a ng-if="quest_num>0" href="#/questions/{{quest_num}}" class="btn btn-green btn-done" ng-click=""><i class="fa fa-chevron-left"></i> Q{{quest_num}} &nbsp;</a>
+
+		<a ng-if="quest_num<4" href="#/questions/{{quest_num+2}}" class="btn btn-green btn-done" ng-click="getAnswer()">Q{{quest_num+2}} &nbsp;<i class="fa fa-chevron-right"></i></a>
+		<a ng-if="quest_num>=4" class="btn btn-green btn-done" ng-click="getNameVal()">Submit &nbsp;<i class="fa fa-send"></i></a>
+</div>
+	</div>
+</div>
