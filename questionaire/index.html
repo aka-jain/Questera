@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Questionaire</title>
+	<head>
+		<title>Questera - Questionairre</title>
 
-<!-- bootstrap init -->
-<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+		<!-- bootstrap init -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<!-- main css -->
-<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-</head>
-
-<!-- defining questionaire app here -->
-<body ng-app="questionaire" ng-controller="mainController" class="wow fadeInUp">
-
-<!-- message intro container path: partials/introMessage.html-->
-<!-- <intro-message></intro-message> -->
+		<!-- main css -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
 
+	</head>
 
-<ng-view></ng-view>
+		<!-- defining questionaire app here -->
+		<body ng-app="questionaire" ng-controller="mainController" class="wow fadeInUp">
 
 
-
-</body>
+		<!-- render all views here -->
+		<ng-view></ng-view>
 
 
 
 
-<!-- angular lib -->
-<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
 
 
-<!-- third party plugins -->
-<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="node_modules/jqlite/jqlite.min.js"></script>
-
-<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="node_modules/wowjs/dist/wow.min.js"></script>
-
-<!-- angular app -->
-<script type="text/javascript" src="app.js"></script>
-
-<!-- services -->
-<script type="text/javascript" src="services/services.js"></script>
-
-<!-- controllers -->
-<script type="text/javascript" src="controllers/controllers.js"></script>
-
-<!-- directives -->
-<script type="text/javascript" src="directives/directives.js"></script>
 
 
-<script type="text/javascript">
-
-           
-</script>
-
-<!-- script for intro messages and loader rendering -->
+		<!-- angular lib -->
+		<!-- <script type="text/javascript" src="node_modules/angular/angular.min.js"></script> -->
+		<!-- <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script> -->
 
 
-<script type="text/javascript">
+		<!-- third party plugins -->
+		<!-- <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script> -->
+		<!-- <script type="text/javascript" src="node_modules/jqlite/jqlite.min.js"></script> -->
 
-              new WOW().init();
-         
-</script>
 
+		<!-- <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+		<!-- <script type="text/javascript" src="node_modules/wowjs/dist/wow.min.js"></script> -->
+
+		<!-- cdns -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+		<!-- angular app -->
+		<script type="text/javascript" src="app.js"></script>
+
+		<!-- services -->
+		<script type="text/javascript" src="services/services.js"></script>
+
+		<!-- controllers -->
+		<script type="text/javascript" src="controllers/controllers.js"></script>
+
+		<!-- directives -->
+		<script type="text/javascript" src="directives/directives.js"></script>
+
+		<!-- init wow.js -->
+		<script type="text/javascript">
+
+		    new WOW().init();
+		         
+		</script>
+		
+	</body>
 
 </html>

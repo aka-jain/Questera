@@ -44,7 +44,7 @@
 			{
 				"option": "A Silence",
 				"selected": false,
-				"value":"a"
+				"value":"b"
 			}
 		],
 		"ans":"a"
@@ -76,7 +76,7 @@
 			{
 				"option": "I'm B",
 				"selected": false,
-				"value":"a"
+				"value":"b"
 			}
 		],
 		"ans":"a"
