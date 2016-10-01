@@ -294,11 +294,148 @@ input[type=checkbox]:checked + label:before{
   background:transparent;
   border: 5px solid #19b91e;;
 }
+.show-quest-error{
+	font-family: 'mons-lig';
+	margin-top:10px;
+}
 
 
 
 
+// results
+.results-container{
+	text-align: center;
+	font-family:'mons-lig';
+	overflow:auto;
+	.dark{
+		background:#141414;
+		color:#f9f9f9;
+		min-height: 100vh;
+	
 
+	}
+	.light{
+		background:#fff;
+		color:#141414;
+		min-height: 100vh;
+	}
+	.graph-container{
+		// background: #fff;
+	    width: 300px;
+	    height: 250px;
+	    position: relative;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    margin-top: 120px;
+	    border-bottom:1px solid #fff;
+	}
+	.hori-grid{
+		height: 50px;
+	    width: 100%;
+	    position: relative;
+	    border-top: 1px solid #656565;
+	}
+	.y-val{
+		position: absolute;
+	    left: -16px;
+	    top: -9px;
+	    font-size: 11px;
+   		color: #d4d4d4;
+	}
+	.graph-vertical-container{
+		position: absolute;
+		width:100%;
+		height:100%;
+		top: 0;
+    	background: rgba(0,0,0,0);
+	}
+	.vert-grid{
+		    /* height: 40%; */
+	    display: inline-block;
+	    background: #fff;
+	    width: 25%;
+	    bottom: 0;
+	    /* margin-bottom: 0; */
+	    position: absolute;
+	    height: 0;
+	    /* top: 0; */
+	    /* margin-top: 0; */
+	    left: 50%;
+	    margin-left: 5%;
+	    position: absolute;
+	    bottom: 0;
+	    background: -webkit-linear-gradient(#66ce0e, #00ffdc);
+	    background: -o-linear-gradient(#66ce0e, #00ffdc);
+	    background: -moz-linear-gradient(#66ce0e, #00ffdc);
+	    background: linear-gradient(#66ce0e, #00ffdc);
+	    transition: all 1s ease-in-out;
+	}
+	.vert-grid:hover{
+		background: -webkit-linear-gradient(#2cea83, #3ee15d);
+	    background: -o-linear-gradient(#2cea83, #3ee15d);
+	    background: -moz-linear-gradient(#2cea83, #3ee15d);
+	    background: linear-gradient(#2cea83, #3ee15d);
+	}
+	.left-vert-grid{
+		// height: 60%;
+   		margin-left: -32%;
+	}
+	.x-val{
+	    position: relative;
+    bottom: 0;
+    /* height: 300px; */
+    margin-bottom: 0;
+    top: 100%;
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    font-size: 11px;
+    display: block;
+    margin-top: 8px;
+	}
+	.cord-val{
+		    margin-top: 3px;
+    color: #e8e8e8;
+    font-family: 'mons-hair';
+    left: -3px;
+    margin-left: -16px;
+	}
+	.coordinates{
+		margin-top: 10px;
+		// position: absolute;
+		// left:-8px;
+    	// text-align: left;
+    	margin-bottom:50px;
+	}
+}
+.score{
+	margin-top:160px;
+	font-size:30px;
+	margin-left:-10px;
+	margin-bottom:40px;
+}
+.main-answer-key{
+	text-align:left;
+	margin-left:40px;
+	margin-top:50px;	
+
+}
+.main-answer-key{
+	ul{
+		margin-bottom:20px;
+	}
+}
+.option-key{
+	margin-left:10px;
+}
+.dark-text{
+	color:#171717;
+}
+.call-line{
+	margin-bottom:40px;
+}
 
 
 

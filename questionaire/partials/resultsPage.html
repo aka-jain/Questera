@@ -1,0 +1,87 @@
+<!-- results page directive -->
+<div class="container-fluid results-container" ng-controller="resultsController">
+
+<div class="row">
+	<div class="col-xs-12 col-sm-6 dark wow fadeInUp">
+		<h3>Graph</h3>
+
+		<!-- making graph's horizontal skeleton for limit 5 -->
+		<div class="graph-container">
+			<div class="hori-grid">
+				<span class="y-val">5</span>
+			</div>
+			<div class="hori-grid">
+				<span class="y-val">4</span>
+			</div>
+			<div class="hori-grid">
+				<span class="y-val">3</span>
+			</div>
+			<div class="hori-grid">
+				<span class="y-val">2</span>
+			</div>
+			<div class="hori-grid">
+				<span class="y-val">1</span>
+			</div>
+			<div class="hori-grid">
+				<span class="y-val">0</span>
+			</div>
+
+			<!-- graph's vertical grid skeleton -->
+			<div class="graph-vertical-container">
+				
+				<div class="vert-grid left-vert-grid vert-wrong" ><span class="x-val">Wrong</span>
+				</div>
+				<div class="vert-grid vert-correct" ><span class="x-val">Correct</span>
+				</div>
+
+			</div>
+
+			<!-- defining coordinates details -->
+			<div class="coordinates">
+				<div class="cord-val">
+					X -> Answers response (right or wrong)
+				</div>
+				<div class="cord-val">
+					Y-> Number of Questions (right or wrong)
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="clearfix"></div>
+
+		<h1 class="score"> You scored {{correctCount}} out of 5!</h1>
+
+	</div>
+
+	<!-- All Answers key section -->
+	<div class="col-xs-12 col-sm-6 light wow fadeInDown">
+
+		<h3>All Answers</h3>
+
+		<div class="main-answer-key">
+
+		<!-- iterate to all questions and answers -->
+			<ul ng-repeat="(key, value) in data" class="list-unstyled">
+			Q{{key+1}}. {{value.quest}}
+
+				<li class="option-key" ng-repeat="(key, value) in value.options">
+					<span class="text-uppercase">{{value.value}}</span>.
+					{{value.option}}
+				</li>
+
+				<!-- mention user's answer and correct answer -->
+				<span class="text-muted">Your Answer </span>
+				<span class="text-uppercase">{{userAnswersList[key].ans}}</span>,
+				<span class="text-muted">Correct Answer</span> 
+				<span class="text-uppercase">{{value.ans}}</span>
+			</ul>
+
+			<!-- last line -->
+			<h4><strong class="text-muted call-line">Good Job <span class="dark-text text-uppercase">{{firstName}}</span>, why don't you try it again?</strong></h4>
+		</div>
+	</div>
+</div>
+
+</div>

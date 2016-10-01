@@ -1,75 +1,93 @@
 // // main controller (index)
-app.controller('mainController',['$scope','dataQuestionaire','$http', function($scope, dataQuestionaire, $http){
-	
+app.controller('mainController',['$scope', function($scope){
 
-	// $scope.getNameVal = function(){
-	// 	$scope.firstName = $scope.name;
-	// 	console.log($scope.firstName)
-	// }
-// dataQuestionaire.success(function(data){
-	
-// })
-	
-	
+// No content needed	
 
 }])
 
-// main controller (index)
+// question answers controller
 app.controller('questionsAnswers',['$scope','dataQuestionaire','$http','$routeParams','getName','processAnswer', function($scope, dataQuestionaire, $http, $routeParams, getName, processAnswer){
 	
-dataQuestionaire.success(function(data){
+		// calling API response
+	dataQuestionaire.success(function(data){
 
-	$scope.data = data;
+		// bind response to this scope
+		$scope.data = data;
 
-	$scope.questList = [];
-	var userName = getName.storeName()
+		// make empty questlist for current question
+		$scope.questList = [];
 
-	
-	
+		// get stored user name from service (factory here)
+		var userName = getName.storeName()
 
-	
-	$scope.quest_num = $routeParams.param-1;
+		// set question number from route parameter
+		$scope.quest_num = $routeParams.param-1;	
 
-	$scope.questList=$scope.data[$scope.quest_num];
-	// console.log($scope.data[quest_num]);
+		// Set quest list from service
+		processAnswer.setQuest($scope.quest_num);
 
-	$scope.question = $scope.questList.quest;
-	$scope.correctAns = $scope.questList.ans;
-	var answer = $scope.questList.ans;
+		// initialize it to questlist
+		$scope.questList=$scope.data[$scope.quest_num];
+		
 
-	if($scope.quest_num==0){
-		if(!angular.isUndefined(userName)){
-			$scope.questList.options[0].a = userName;
+		// bind question, correctAns
+		$scope.question = $scope.questList.quest;
+		$scope.correctAns = $scope.questList.ans;
+
+		// take ans for a particular question
+		var answer = $scope.questList.ans;
+
+		/*** remove this content if you want to add your own first question in API ***/
+
+		// set first question of API from client side
+		if($scope.quest_num==0){
+			if(!angular.isUndefined(userName)){
+				
+				$scope.questList.options[0].option = userName;
+			}
+			else{
+			
+				$scope.questList.options[0].option = "Anonymous"
+			}
 		}
-		else{
-			$scope.questList.options[0].a = "Anonymous"
+		/*** ---- ***/
+
+		$scope.correctAnswer = $scope.questList.ans;
+
+
+		// checking user's answers
+		var check = processAnswer.storeUser();
+		
+
+		for(i in $scope.questList.options){
+			for(j in check){
+				if(check[j].questNum==$scope.quest_num && check[j].ans==$scope.questList.options[i].ans){
+					$scope.questList.options[i].selected=true
+				}
+			}
 		}
-	}
-	
-
-	$scope.correctAnswer = $scope.questList.ans;
-
-
-	
-
-
-
-
- processAnswer.getAnswer($scope.correctAns);
-		// var userAnswer = processAnswer.userAnswer();
-
-
-
-
-})
-
-// console.log();
-
-
-	
-	
-
+	})
 }])
 
 
+
+// results controller
+app.controller('resultsController',['$scope','dataQuestionaire','$http', 'rightAnswers','$timeout',function($scope, dataQuestionaire, $http, rightAnswers, $timeout){
+	
+	// calling API response
+	dataQuestionaire.success(function(data){
+
+		$scope.data = data;
+
+		$scope.$watch("data", function (newvalue, oldvalue) {
+			$timeout(function(){
+				rightAnswers.storeList($scope.data);
+				
+			},0)
+				
+		})
+
+	});
+
+}])
 

@@ -1,3 +1,6 @@
+/*** using factory mathods to make services ***/
+
+// API call service
 app.factory('dataQuestionaire', ['$http', function ($http) {
 	
 	// serving API directly
@@ -15,6 +18,7 @@ app.factory('getName', function(){
     return {
 
         firstName: function(nameVal){
+            // first name processing
         	if(!angular.isUndefined(nameVal)){
         		var name=nameVal.trim().split(" ");
 				name[0]=name[0].substr(0, 1).toUpperCase() + name[0].substr(1).toLowerCase();
@@ -32,25 +36,26 @@ app.factory('getName', function(){
     }               
 });
 
+
 // process answers
 app.factory('processAnswer', function(){
-	var correctAnswers = [];
+	// var correctAnswers = [];
 	var userAnswers = [];
+    var selectedList = [];
 	var getAns;
+    var getQuest;
+
     return {
-    	processCorrect:function(ans){
-			correctAnswers.push(ans);
-    		return 
-		},
-    	processUser: function(ans){
-    		userAnswers.push(ans)
+    	processUser: function(questNum, ans){
+            var i=0, flag=1;
+
+
+                userAnswers.push({
+                questNum:questNum,
+                ans:ans
+            })
     		return
     	},
-        storeCorrect: function(){
-        	
-        	return correctAnswers
-           
-        },
         storeUser: function(){
         	
         	return userAnswers
@@ -62,6 +67,32 @@ app.factory('processAnswer', function(){
         },
         setAnswer: function(){
         	return getAns;
-        } 
+        },
+        setQuest: function(quest_num){
+            getQuest = quest_num
+            return
+        },
+        getQuest: function(){
+            return getQuest
+        }
     }               
 });
+
+// process right answers from API
+app.factory('rightAnswers', function(){
+    var list = [];
+    return {
+        storeList:function(data){
+            for (i in data){
+                list.push({
+                    ans:data[i].ans
+                })
+                console.log(list)
+            }
+            return
+        },
+        getList:function(){
+            return list;
+        }
+    }
+})

@@ -114,7 +114,7 @@ app.directive('introMessage', function(getName){
 							})
 								$(".flow-container").css({
 							})
-						},0)
+						},4000)
 
 					},
 					done: function(){
@@ -220,7 +220,7 @@ app.directive('introMessage', function(getName){
 						},500);
 						setTimeout(function(){
 							$("#welcome-intro").hide().fadeIn();
-						},0)
+						},4400)
 						// show secret msg ;)
 						 $("h3.intro-load").html("<span class='white ssh'>Sssshhh...</span> Loading our journey anonymously &#x1F910; <span class='load-dots load-dots-0'>.</span> <span class='load-dots load-dots-1'>.</span> <span class='load-dots load-dots-2'>.</span>")
 						 // start dot loader
@@ -238,7 +238,6 @@ app.directive('introMessage', function(getName){
 });
 
 // question answer directive
-// intro message directive and handling script with getName service
 app.directive('questionAnswer', function(processAnswer){
 	// Runs during compile
 	return {
@@ -250,36 +249,122 @@ app.directive('questionAnswer', function(processAnswer){
 					this.init();
 				}
 
-				// making internal functions for intro msg
+				
 				questAns.prototype={
 					init:function(){
+						// initialize with init function
 
+						$(".show-quest-error").hide()
+						scope.getAnswer = function(event){
 
-						
-						setTimeout(function(){
-							console.log($("input:checked").val());
-						})
-						
-						scope.getAnswer = function(){
-
-		processAnswer.processCorrect(scope.correctAnswer);
-		// var userAnswer = processAnswer.userAnswer();
-		// processAnswer.processCorrect(scopw.)
-	}
-	console.log(processAnswer.processCorrect(scope.correctAnswer))
-
+							// take user's answer
+							var userAnswer = $('input.get-option:checked').val();
+							if(angular.isUndefined(userAnswer)){
+								event.preventDefault();
+								$(".show-quest-error").hide().fadeIn();
+							}
+							else{
+								var c = processAnswer.getQuest();
+								processAnswer.processUser(c, userAnswer);
+							}
+						}
 					}
-
 				}
 
-		
-		var questAnsObj = new questAns();
-	})();
+			
+				var questAnsObj = new questAns();
+			})();
+		}
 	}
-}
 })
 
 
+// directive script for result page
+
+app.directive('resultsPage', function(processAnswer, rightAnswers, $timeout, getName){
+	// Runs during compile
+	return {
+		templateUrl: '../partials/resultsPage.html',
+
+		link: function (scope, el, attrs) {
+			// calling Anonymous self invoking function
+			(function(){
+
+				function result(){
+					this.init();
+				}
+
+				// making internal functions for intro msg
+				result.prototype={
+					init:function(){
+
+						var self = this;
+						scope.userAnswersList = [];
+
+
+						if(angular.isUndefined(getName.storeName())){
+							scope.firstName ="Anonymous"
+						}
+						else{
+							scope.firstName =getName.storeName()
+						}
+
+						var takeList = processAnswer.storeUser();
+						for(i in takeList){
+							scope.userAnswersList.push({
+								ans:takeList[i].ans
+							})
+						}
+
+						var userAns = scope.userAnswersList;
+						scope.rightAns =[];
+						
+						// let the data load
+						$timeout(function(){
+							
+							scope.rightAns = rightAnswers.getList()
+							scope.correctCount = self.correctAnswers(userAns, scope.rightAns);
+							scope.wrongCount = 5 - scope.correctCount
+							
+							// animate height of graph grid
+							$timeout(function(){
+								$(".graph-vertical-container .vert-correct").css({
+
+									'height':(scope.correctCount*100)/5+ "%"
+								});
+								$(".graph-vertical-container .vert-wrong").css({
+									'height':(scope.wrongCount*100)/5+ "%"
+								});
+							},600)
+
+						},1000)
+	
+					},
+					correctAnswers:function(userAns, rightAns){
+						// process number of correct answers user has made
+						var self = this; 
+
+						var i=0,j=0,correct=0, wrong=0;
+						for(i=0; i<userAns.length;i++){
+							
+							if(userAns[i].ans == rightAns[i].ans){
+								correct=correct+1;
+							}
+							else{
+								wrong=+wrong+1;
+							}
+						}
+						// return correct answers count
+						return correct;
+
+					}
+				}
+
+				var resultsObj = new result();
+			})();
+		}
+	}
+})
 
 
 
