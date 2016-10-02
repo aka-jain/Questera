@@ -436,6 +436,11 @@ input[type=checkbox]:checked + label:before{
 .call-line{
 	margin-bottom:40px;
 }
+a.text-muted:hover{
+	transition:all 0.2s ease-in-out;
+	text-decoration:none;
+	color:#141414;
+}
 
 @media (max-width:640px){
 	.qa-container {

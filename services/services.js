@@ -41,7 +41,6 @@ app.factory('getName', function(){
 app.factory('processAnswer', function(){
 	// var correctAnswers = [];
 	var userAnswers = [];
-    var selectedList = [];
 	var getAns;
     var getQuest;
 
@@ -74,6 +73,10 @@ app.factory('processAnswer', function(){
         },
         getQuest: function(){
             return getQuest
+        },
+        resetList: function(){
+            userAnswers = [];
+            return
         }
     }               
 });
@@ -93,6 +96,10 @@ app.factory('rightAnswers', function(){
         },
         getList:function(){
             return list;
+        },
+        resetList: function(){
+            list = [];
+            return
         }
     }
 })

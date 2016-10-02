@@ -51,7 +51,7 @@
 
 		<div class="clearfix"></div>
 
-		<h1 class="score"> You scored {{correctCount}} out of 5!</h1>
+		<h1 class="score"> You scored {{correctCount}} out of 5! </h1>
 
 	</div>
 
@@ -62,7 +62,7 @@
 
 		<div class="main-answer-key">
 
-		<!-- iterate to all questions and answers -->
+		<!-- iterate to all questions and answers -->`
 			<ul ng-repeat="(key, value) in data" class="list-unstyled">
 			Q{{key+1}}. {{value.quest}}
 
@@ -79,7 +79,7 @@
 			</ul>
 
 			<!-- last line -->
-			<h4><strong class="text-muted call-line">Good Job <span class="dark-text text-uppercase">{{firstName}}</span>, why don't you try it again?</strong></h4>
+			<h4 ng-click="resetList()"><a href="/" class="text-muted" ><strong class=" call-line">Good Job <span class="dark-text text-uppercase">{{firstName}}</span>, why don't you try it again &#x1f60e;</strong></a></h4>
 		</div>
 	</div>
 </div>

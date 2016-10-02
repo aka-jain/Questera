@@ -372,7 +372,8 @@ app.directive('resultsPage', function(processAnswer, rightAnswers, $timeout, get
 							scope.rightAns = rightAnswers.getList()
 							scope.correctCount = self.correctAnswers(userAns, scope.rightAns);
 							scope.wrongCount = 5 - scope.correctCount
-							
+
+
 							// animate height of graph grid
 							$timeout(function(){
 								$(".graph-vertical-container .vert-correct").css({

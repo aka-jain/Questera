@@ -72,7 +72,7 @@ app.controller('questionsAnswers',['$scope','dataQuestionaire','$http','$routePa
 
 
 // results controller
-app.controller('resultsController',['$scope','dataQuestionaire','$http', 'rightAnswers','$timeout',function($scope, dataQuestionaire, $http, rightAnswers, $timeout){
+app.controller('resultsController',['$scope','dataQuestionaire','$http', 'rightAnswers','$timeout','processAnswer',function($scope, dataQuestionaire, $http, rightAnswers, $timeout, processAnswer){
 	
 	// calling API response
 	dataQuestionaire.success(function(data){
@@ -86,6 +86,12 @@ app.controller('resultsController',['$scope','dataQuestionaire','$http', 'rightA
 			},0)
 				
 		})
+
+		 $scope.resetList = function() {
+		 	console.log("check")
+		 	rightAnswers.resetList();
+		 	processAnswer.resetList();
+		}
 
 	});
 
