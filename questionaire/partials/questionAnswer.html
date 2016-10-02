@@ -15,8 +15,9 @@
 			<!-- iterate options for the particular question -->
 				<h3 class="options" ng-repeat="(option_num, options) in questList.options">
 
-					<input class="get-option" type="radio" name="{{quest_num}}" id="{{option_num}}-{{quest_num}}" value="{{options.value}}" ng-checked="(questList.options[option_num].selected == true)" >
-       				<label for="{{option_num}}-{{quest_num}}"><strong>{{options.option}}</strong> </label>
+					<input class="get-option " type="radio" name="{{quest_num}}" id="{{option_num}}-{{quest_num}}" value="{{options.value}}" ng-checked="(questList.options[option_num].selected == true)" >
+       				<label ng-if="quest_num==0" for="{{option_num}}-{{quest_num}}"  ><strong class="text-capitalize">{{options.option}}</strong> </label>
+       				<label ng-if="quest_num!=0" for="{{option_num}}-{{quest_num}}"  ><strong>{{options.option}}</strong> </label>
        				<div class="check"></div>
 					
 				</h3>

@@ -87,7 +87,7 @@ app.factory('rightAnswers', function(){
                 list.push({
                     ans:data[i].ans
                 })
-                console.log(list)
+              
             }
             return
         },

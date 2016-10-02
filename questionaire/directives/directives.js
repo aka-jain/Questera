@@ -157,18 +157,40 @@ app.directive('introMessage', function(getName){
 
 							// welcome msg
 							setTimeout(function () {
-								$(".intro-welcome").css({
-									'height':'50px',
-									'opacity':'1'
-								});
+
+								if($(window).outerWidth()<640){
+									$(".intro-welcome").css({
+										'height':'28px',
+										'opacity':'1'
+									});
+								}
+								else{
+									$(".intro-welcome").css({
+										'height':'50px',
+										'opacity':'1'
+									});
+								}
+								
 							},500)
 
 							// intro load timeout function
 							setTimeout(function () {
-								$(".intro-load").css({
-									'height':'50px',
-									'opacity':'1'
-								});
+								
+
+								if($(window).outerWidth()<640){
+									$(".intro-load").css({
+										'height':'70px',
+										'opacity':'1'
+									});
+								}
+								else{
+									$(".intro-load").css({
+										'height':'50px',
+										'opacity':'1'
+									});
+								}
+
+
 							},500)
 
 							setTimeout(function(){
@@ -206,21 +228,46 @@ app.directive('introMessage', function(getName){
 						  	'color':'#fff'
 						  });
 
-						setTimeout(function () {
-							$(".intro-welcome").css({
-								'height':'50px',
-								'opacity':'1'
-							});
-						},500);
-						setTimeout(function () {
-							$(".intro-load").css({
-								'height':'50px',
-								'opacity':'1'
-							});
-						},500);
+						// welcome msg
+							setTimeout(function () {
+
+								if($(window).outerWidth()<640){
+									$(".intro-welcome").css({
+										'height':'28px',
+										'opacity':'1'
+									});
+								}
+								else{
+									$(".intro-welcome").css({
+										'height':'50px',
+										'opacity':'1'
+									});
+								}
+								
+							},500)
+
+							// intro load timeout function
+							setTimeout(function () {
+								
+
+								if($(window).outerWidth()<640){
+									$(".intro-load").css({
+										'height':'70px',
+										'opacity':'1'
+									});
+								}
+								else{
+									$(".intro-load").css({
+										'height':'50px',
+										'opacity':'1'
+									});
+								}
+
+
+							},500)
 						setTimeout(function(){
 							$("#welcome-intro").hide().fadeIn();
-						},4400)
+						},4400) 
 						// show secret msg ;)
 						 $("h3.intro-load").html("<span class='white ssh'>Sssshhh...</span> Loading our journey anonymously &#x1F910; <span class='load-dots load-dots-0'>.</span> <span class='load-dots load-dots-1'>.</span> <span class='load-dots load-dots-2'>.</span>")
 						 // start dot loader
@@ -335,9 +382,9 @@ app.directive('resultsPage', function(processAnswer, rightAnswers, $timeout, get
 								$(".graph-vertical-container .vert-wrong").css({
 									'height':(scope.wrongCount*100)/5+ "%"
 								});
-							},600)
+							},0)
 
-						},1000)
+						},800)
 	
 					},
 					correctAnswers:function(userAns, rightAns){

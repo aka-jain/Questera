@@ -345,4 +345,20 @@ input[type=checkbox]:checked + label:before {
 .call-line {
   margin-bottom: 40px; }
 
+@media (max-width: 640px) {
+  .qa-container .questionaire-container, .qa-container .user-intro-container {
+    padding-left: 40px;
+    padding-right: 40px; }
+  .qa-container h1.hey {
+    font-size: 30px; }
+  .qa-container h3.intro-load {
+    height: 72px;
+    /* line-height: 0; */
+    position: relative;
+    margin-top: 0; }
+  .qa-container h3.intro-welcome {
+    margin-top: 0px; }
+  .qa-container #welcome-intro {
+    padding-left: 40px; } }
+
 /*# sourceMappingURL=main.css.map */

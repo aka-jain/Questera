@@ -437,8 +437,30 @@ input[type=checkbox]:checked + label:before{
 	margin-bottom:40px;
 }
 
-
-
+@media (max-width:640px){
+	.qa-container {
+		.questionaire-container, .user-intro-container{
+			padding-left:40px;
+			padding-right:40px;
+		}
+		h1.hey{
+			font-size:30px;
+		}
+		h3.intro-load{
+			height: 72px;
+		    // opacity: 1;
+		    /* line-height: 0; */
+		    position: relative;
+		    margin-top: 0;
+		}
+		h3.intro-welcome{
+			margin-top:0px;
+		}
+		#welcome-intro{
+			padding-left:40px;
+		}
+	}
+}
 
 
 
