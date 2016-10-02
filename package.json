@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-   "engines": {
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/aka-jain/Questera"
+  },
+  "engines": {
     "node": "v4.5.0"
   },
   "author": "Akash <akashjain993@gmail.com> (http://www.jainakash.in/)",
@@ -15,9 +19,13 @@
     "angular-apimock": "^0.3.3",
     "angular-ui-router": "^0.3.1",
     "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
     "jqlite": "^0.2.39",
+    "jquery": "^3.1.1",
     "simple-server": "^1.0.1",
-    "ui-router": "^1.0.0-alpha.3"
+    "ui-router": "^1.0.0-alpha.3",
+    "wowjs": "^1.1.3"
   }
 }
