@@ -358,6 +358,7 @@ a.text-muted:hover {
     font-size: 30px; }
   .qa-container h3.intro-load {
     height: 72px;
+    display: none;
     /* line-height: 0; */
     position: relative;
     margin-top: 0; }

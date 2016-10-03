@@ -22,6 +22,10 @@ app.directive('introMessage', function(getName){
 						var self = this;
 						var nameVal;
 
+
+						
+
+
 						setTimeout(function () {
 	                        $("input#input1").get(0).focus();
 	                    },1500);
@@ -196,6 +200,9 @@ app.directive('introMessage', function(getName){
 							setTimeout(function(){
 								$("#welcome-intro").hide().fadeIn();
 							},4400)
+							$(".intro-load").css({
+								'display':'block'
+							})
 							// calling dot loader
 							self.loadDots();
 
@@ -203,12 +210,19 @@ app.directive('introMessage', function(getName){
 							self.flowLoader();
 						}else {
 							// show error msg
+							$(".intro-load").css({
+								'display':'hide'
+							})
 							$(".error-intro").hide().fadeIn();
 						}
 
 					},
 					skip: function(){
 						scope.firstName = "Anonymous"; 
+
+						$(".intro-load").css({
+							'display':'block'
+						})
 						// skip button function
 						var self = this;
 							// show Anonymous user
@@ -227,6 +241,8 @@ app.directive('introMessage', function(getName){
 						  $(".user-intro-container h1 span").css({
 						  	'color':'#fff'
 						  });
+
+
 
 						// welcome msg
 							setTimeout(function () {

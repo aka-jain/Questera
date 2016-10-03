@@ -152,6 +152,7 @@ ul{
 	}
 	.intro-load{
 		line-height:30px;
+		
 		position:absolute;
 	}
 
@@ -453,6 +454,7 @@ a.text-muted:hover{
 		}
 		h3.intro-load{
 			height: 72px;
+			display:none;
 		    // opacity: 1;
 		    /* line-height: 0; */
 		    position: relative;
